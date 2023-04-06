@@ -1,0 +1,160 @@
+/*Página Nuestros Servicios*/
+/*Fuente-Formato*/
+.gray {
+    @extend .alineaciontexto;
+    color: white; text-shadow: black 0.1rem 0.1rem 0.2rem;
+    font-size: 25px; 
+}
+
+/*Fuente-Alineación*/
+.parrafo-index  {
+    @extend .alineaciontexto;
+}
+
+/*caja-productos*/
+#servicios  {
+    @extend .alineaciontexto;
+    grid-area: productos;
+}
+
+/*Padre-cards*/
+.padre-cards    {
+    background-color: rgba(149, 162, 190, 0.829);
+    display: flex;
+    flex-direction: column;
+    width: 16rem;
+    row-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+}
+
+/*Hijo-cards*/
+.card-servicios {
+    @include sizes (235px, 350px);
+    border: solid 1px;
+    justify-items: center;
+}
+
+/*Banner-productos-y-servicios*/
+#banner__productosyservicios {
+    @include sizes (200px, 40rem);
+    grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(149, 162, 190, 0.829);
+    margin: auto;
+}
+
+/*Banner-texto*/
+#banner__productosyservicios h2 {
+    font-size: 20px;
+}
+
+/*Padre-Banner*/
+#padre__banner {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*Hijo banner*/
+.banner__info   {
+    @extend .alineaciontexto;
+    align-items: center;
+    border: solid 1px;
+    padding: 1px;
+}
+
+/*Fuente-titulo-servicios*/
+.p-servicios    {
+    font-size: 30px;
+}
+
+/*Mobile First*/
+/*Grilla*/
+#grilla-gral    {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "productos"
+        "banner"
+        "footer";
+    grid-template-rows: 1frpx 1fr 1fr 50px;
+    row-gap: 10px;
+    height: 100vh;
+    margin: auto;
+}
+
+/*Media Querie 320px*/
+@media screen and (min-width: $pantalla-pequeña) {
+    #grilla-gral {
+        grid-template-areas: 
+            "header header"
+            "productos productos"
+            "banner banner"
+            "footer footer";
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*Media Querie 768px*/
+@media screen and (min-width: $pantalla-mediana) {
+    #grilla-gral {
+        grid-template-rows: 200px 1fr 1fr 50px;
+        grid-template-areas: 
+            "header header header"
+            "productos productos productos"
+            "banner banner banner"
+            "footer footer footer";
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*CARDS*/
+    .padre-cards    {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 32rem;
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+
+    /*Seccion Banner*/
+    #banner__productosyservicios {
+        @include sizes (45rem, 14rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    /*Banner-contenido*/
+    #padre__banner  {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/*Media Querie 900px*/
+@media screen and (min-width: $pantalla-grande) {
+    /*Grilla Gral*/
+    #grilla-gral {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Grilla-Navegacion*/
+    #navegacion-web {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    /*CARDS*/
+    .padre-cards    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 48rem;
+        justify-content: space-between;
+        column-gap: 20px;
+    }
+}
