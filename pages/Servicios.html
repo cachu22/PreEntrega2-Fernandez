@@ -50,24 +50,41 @@
                             </li>
                         </ul>
                     </div>
+                    <!-- Login -->
+                    <form id="Header-login">
+                        <input type="text" placeholder="Usuario" id="user">
+                        <input type="password" placeholder="Contraseña" id="pass">
+                            <div class="check">
+                                <p id="mensajelog">Inicie sesión</p>
+                            </div>
+                        <input type="submit" class="btn-login" value="Ingresar">
+                    </form>
             </div>
         </nav>
         
-        <h1>TecniPC</h1>
-        
+        <h1>TecniPC</h1>  
     </header>
 
     <main id="servicios">
+
+        
         <!--Sección Cards-->
         <!--Sección Cards productos y servicios-->
         <section>
             <h2>Productos y servicios</h2>
-            <h3 class="p-servicios">Ofrecemos trabajos y productos de la más alta calidad</h3>
-
+                <h3 id="pservicios">Ofrecemos trabajos y productos de la más alta calidad</h3>
+                    <!-- Buscador -->
+                    <input type="text" name="ingreso" value="" id="ingreso" />
+                    <button id="Botonbuscar">Search</button>
+                    <div id="contenedor">
+                    </div>
+                    <ul id="lista></ul>
+                    <div class="caja">
+                    </div>
             <!--padre cards-->
             <div class="padre-cards">
                 <!--Card 1-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion1.jpg" alt="Diagnostico">
                     <p>Diagnostico</p>
                     <p>precio: $2000</p>
@@ -76,7 +93,7 @@
                 </div>
 
                 <!--Card 2-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion2.jpg" alt="Reparación">
                     <p>Reparación</p>
                     <p>precio: $5000</p>
@@ -85,7 +102,7 @@
                 </div>
 
                 <!--Card 3-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion3.jpg" alt="Actualización">
                     <p>Actualización</p>
                     <p>precio: $10000</p>
@@ -94,7 +111,7 @@
                 </div>
 
                 <!--Card 4-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion4.jpg" alt="Limpieza">
                     <p>Limpieza</p>
                     <p>precio: $3500</p>
@@ -103,7 +120,7 @@
                 </div>
 
                 <!--Card 5-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion5.jpg" alt="Programación">
                     <p>Programación</p>
                     <p>precio: $5000</p>
@@ -112,7 +129,7 @@
                 </div>
 
                 <!--Card 6-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion6.jpg" alt="Backup">
                     <p>Recuperación de datos</p>
                     <p>precio: $7000</p>
@@ -121,7 +138,7 @@
                 </div>
 
                 <!--Card 7-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion7.jpg" alt="Disco Rígido">
                     <p>Disco Rígido</p>
                     <p>precio: $4000</p>
@@ -130,7 +147,7 @@
                 </div>
 
                 <!--Card 8-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion8.jpg" alt="Disco SSD">
                     <p>Disco SSD</p>
                     <p>precio: $4500</p>
@@ -139,7 +156,7 @@
                 </div>
 
                 <!--Card 9-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion9.jpg" alt="Auriculares">
                     <p>Auriculares</p>
                     <p>precio: $3500</p>
@@ -148,7 +165,7 @@
                 </div>
 
                 <!--Card 10-->
-                <div class="card-servicios">
+                <div class="cardservicios">
                     <img src="../img/Reparacion10.jpg" alt="Teclado">
                     <p>Teclado USB</p>
                     <p>precio: $2000</p>

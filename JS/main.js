@@ -230,3 +230,4 @@ function guardarLS (){
     console.log(video[1].precio);
 
     console.log(negocio);
+ 
