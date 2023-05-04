@@ -1,10 +1,9 @@
 const entradas=document.querySelectorAll('.fuente-botones')
 
 function respuestaClick1(){
-    Swal.fire('Any fool can use a computer')
+    alert("Recibimos tu mensaje, te responderemos a la brevedad")
 }
 function respuestaClick2(){
-    Swal.fire('Any fool can use a computer')
     console.log("Usuario borró los datos")
 }
 
