@@ -53,7 +53,6 @@
     Botonbuscar.innerText='Buscar';
     
     const inputs=document.querySelectorAll('input')
-    console.log(inputs)
     const buscador = inputs[3]
     buscador.addEventListener('keyup', ()=>{
         console.log(inputs[3].value)
@@ -66,7 +65,6 @@
 
     //Login
     const formulario = document.querySelector("#Header-login");
-        console.log(formulario);
         formulario.addEventListener("submit",(e)=>{
             e.preventDefault();
         let user = e.target[0].value
@@ -778,13 +776,12 @@ const chango= JSON.parse(localStorage.getItem('chango')) || [];
 localStorage.setItem("chango", JSON.stringify(chango))
 
 chango.length === 0 && console.log("tu carrito esta vacio");
-console.log(chango); 
 
 const totales = chango.reduce((acumulado, producto) => (acumulado + producto.precio), 0);
 
+console.log(chango); 
 console.log("El precio total es " + totales);
 
-console.log(negocio);
 
 //Limpiar localstorage
 /* localStorage.clear() */
