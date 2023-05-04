@@ -1,25 +1,6 @@
-class Ventas {
-        constructor(nombre, precio, stock){
-            this.nombre = nombre;
-            this.precio = precio;
-            this.stock = stock;
-        }
-        agregarImpuesto(impuesto){
-            this.precio = this.precio +(this.precio * impuesto) / 100
-        }
-        vender(cant){
-            if (cant <= this.stock) {
-                this.stock = this.stock - cant;
-                return this.precio * cant;
-            } else {
-                return "Sin stock no queda naa";
-            }
-    }
-    }
-    
     /* Array de productos y servicios */
     const servicios=[
-        { id: 1, nombre: "Diagnostico", precio: 2000, stock: 50},
+        { id: 1, nombre: "Diagnostico", precio: 2000, stock: 10},
         { id: 2, nombre: "Reparación", precio: 10000, stock: 50 },
         { id: 3, nombre: "Actualización", precio: 5000, stock: 50 },
         { id: 4, nombre: "Limpieza", precio: 5000, stock: 50 },
@@ -48,7 +29,6 @@ class Ventas {
     
     //Spread
     const negocio= [...servicios, ...video]
-    console.log(negocio)
     
     function filtrarServicio(arr, filtro) {
     const filtrado = arr.filter((el) => {
@@ -99,226 +79,639 @@ function guardarLS (){
         guardarLS(busquedas)
 
     })
-    
-    let Guardado= JSON.parse (localStorage.getItem("chango"))
-    console.log(Guardado);
-    
-    //JSON
-/*     localStorage.setItem("Placas de video", JSON.stringify(video))
-    console.log(video[1].precio); */
 
-    //ELIMINAR ES TEST
-    const test=document.getElementsByClassName("cardservicios")
-    console.log(test);
-
-//AGREGAR AL CARRITO VARIOS ELEMENTOS
-
-
-
+//Cards de productos
 const Diagnostico = document.querySelectorAll("button");
 Diagnostico[2].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 1);
-    if (producto.stock < 1) {
-    alert('No tenemos stock de materiales para esta tarea.');
-    return;
-    }
-    alert("agregado al carrito");
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango));
+
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de diagnostico por el valor de $2000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
 });
 
-const Reparacion =document.querySelectorAll("button")
-Reparacion[3].addEventListener("click", function(){
+const Reparacion = document.querySelectorAll("button");
+Reparacion[3].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 2);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Actualizacion =document.querySelectorAll("button")
-Actualizacion[4].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Reparación por el valor de $10000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Actualizacion = document.querySelectorAll("button");
+Actualizacion[4].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 3);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Limpieza =document.querySelectorAll("button")
-Limpieza[5].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Actualización por el valor de $5000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Limpieza = document.querySelectorAll("button");
+Limpieza[5].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 4);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Programacion =document.querySelectorAll("button")
-Programacion[6].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Limpieza por el valor de $5000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Programacion = document.querySelectorAll("button");
+Programacion[6].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 5);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Recuperacion_de_datos =document.querySelectorAll("button")
-Recuperacion_de_datos[7].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Programación por el valor de $10000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Recuperacion_de_datos = document.querySelectorAll("button");
+Recuperacion_de_datos[7].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 6);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Disco_rigido =document.querySelectorAll("button")
-Disco_rigido[8].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Recumeración de datos por el valor de $15000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Disco_rigido = document.querySelectorAll("button");
+Disco_rigido[8].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 7);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Disco_SSD =document.querySelectorAll("button")
-Disco_SSD[9].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar un disco rígido por el valor de $5000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Disco_SSD = document.querySelectorAll("button");
+Disco_SSD[9].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 8);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Auriculares =document.querySelectorAll("button")
-Auriculares[10].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar un disco SSD por el valor de $10000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Auriculares = document.querySelectorAll("button");
+Auriculares[10].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 9);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Teclado_USB =document.querySelectorAll("button")
-Teclado_USB[11].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar unos auriculares por el valor de $1000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Teclado_USB = document.querySelectorAll("button");
+Teclado_USB[11].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 10);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const Control_de_temperatura =document.querySelectorAll("button")
-Control_de_temperatura[12].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar un teclado USB por el valor de $4000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const Control_de_temperatura = document.querySelectorAll("button");
+Control_de_temperatura[12].addEventListener("click", function() {
     const producto = negocio.find((prod) => prod.id === 11);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const RTX_4090_TUF =document.querySelectorAll("button")
-RTX_4090_TUF[13].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar el servicio de Control de temperatura por el valor de $20000 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const RTX_4090_TUF = document.querySelectorAll("button");
+RTX_4090_TUF[13].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 1);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const RTX_3070_Ti =document.querySelectorAll("button")
-RTX_3070_Ti[14].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_4090_TUF por el valor de $253261 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const RTX_3070_Ti = document.querySelectorAll("button");
+RTX_3070_Ti[14].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 2);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const RTX_2060 =document.querySelectorAll("button")
-RTX_2060[15].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_3070_Ti por el valor de $379999 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const RTX_2060 = document.querySelectorAll("button");
+RTX_2060[15].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 3);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const RTX_3060_GAMING_X =document.querySelectorAll("button")
-RTX_3060_GAMING_X[16].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_2060 por el valor de $135999 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const RTX_3060_GAMING_X = document.querySelectorAll("button");
+RTX_3060_GAMING_X[16].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 4);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
-const RTX_3090_Ventus =document.querySelectorAll("button")
-RTX_3090_Ventus[17].addEventListener("click", function(){
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_3060_GAMING_X por el valor de $78151 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+const RTX_3090_Ventus = document.querySelectorAll("button");
+RTX_3090_Ventus[17].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 5);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
-    }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
 
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_3090_Ventus por el valor de $989999 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
 
-const RTX_3060_Ph_rtx3060 =document.querySelectorAll("button")
-RTX_3060_Ph_rtx3060[18].addEventListener("click", function(){
+const RTX_3060_Ph_rtx3060 = document.querySelectorAll("button");
+RTX_3060_Ph_rtx3060[18].addEventListener("click", function() {
     const producto = video.find((prod) => prod.id === 6);
-    if (producto.stock < 1) {
-        alert('No tenemos stock.');
-        return;
+
+    Swal.fire({
+        title: 'Seguro que desea agregar una placa de video RTX_3060_Ph_rtx3060 por el valor de $259799 + IVA al carrito?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'No!',
+        confirmButtonText: 'Si!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        if (producto.stock < 1) {
+            Swal.fire({
+                title: 'No tenemos stock, buscá una alternativa',
+                text: 'Modal with a custom image.',
+                imageUrl: 'https://unsplash.it/400/200',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+              })
+            return;
+            }
+        chango.push(producto);
+        localStorage.setItem("chango", JSON.stringify(chango))
+          Swal.fire(
+            'Agregado!',
+            'Your file has been deleted.',
+            'success'
+          )
+        }
+      })
+});
+
+//Calculo de ventas
+class Ventas {
+    constructor(nombre, precio, stock){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
     }
-    alert("agregado al carrito")
-    chango.push(producto);
-    localStorage.setItem("chango", JSON.stringify(chango))
-})
+    agregarImpuesto(impuesto){
+        this.precio = this.precio +(this.precio * impuesto) / 100
+    }
+    vender(cant){
+        if (cant <= this.stock) {
+            this.stock = this.stock - cant;
+            return this.precio * cant;
+        } else {
+            return "Sin stock no queda naa";
+        }
+}
+}
 
 //LocalStorage
 const chango= JSON.parse(localStorage.getItem('chango')) || [];
@@ -327,9 +720,50 @@ localStorage.setItem("chango", JSON.stringify(chango))
 chango.length === 0 && console.log("tu carrito esta vacio");
 console.log(chango); 
 
-const totales = chango.reduce((acumulado, producto) => acumulado + producto.precio, 0);
+const totales = chango.reduce((acumulado, producto) => (acumulado + producto.precio), 0);
 
-console.log("El precio total es " + totales); // 3284796
+console.log("El precio total es " + totales);
 
 //Limpiar localstorage
 /* localStorage.clear() */
+
+
+//Tarjetero
+
+/* var cleave = new Cleave('.input-element', {
+    creditCard: true,
+    onCreditCardTypeChanged: function (type) {
+        // update UI ...
+    }
+}); */
+
+
+/* new clearInterval("#card.number"), {
+    creditCard: true,
+    onCreditCardTypeChanged: function (type){
+        console.log(type);
+        switch (type) {
+            case "visa":
+              document.querySelector(".fa-cc-visa").classList.add
+              ("active");
+            break;
+            case "amex":
+              document.querySelector(".fa-cc-amex").classList.add
+              ("active");
+              break;
+            case "diners":
+              document.querySelector(".fa-cc-diners-club").classList.add
+              ("active");
+            break;
+            case "mastercard":
+              document.querySelector(".fa-cc-mastercard").classList.add
+              ("active");
+            break;
+        default:
+            if (type === "unknown") {
+                icons.forEach((icon) =>classList.remove("active"));
+            }
+            break;
+        }
+    }
+}; */
