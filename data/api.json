@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "nombre": "Diagnostico",
+        "precio": 2000,
+        "stock": 1,
+        "img": "Reparacion1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Reparación",
+        "precio": 10000,
+        "stock": 50,
+        "img": "Reparacion2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Actualización",
+        "precio": 5000,
+        "stock": 50,
+        "img": "Reparacion3.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Limpieza",
+        "precio": 5000,
+        "stock": 50,
+        "img": "Reparacion4.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Programación",
+        "precio": 10000,
+        "stock": 50,
+        "img": "Reparacion5.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Recuperación de datos",
+        "precio": 15000,
+        "stock": 50,
+        "img": "Reparacion6.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Disco Rígido",
+        "precio": 5000,
+        "stock": 50,
+        "img": "Reparacion7.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Disco SSD",
+        "precio": 10000,
+        "stock": 50,
+        "img": "Reparacion8.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Auriculares",
+        "precio": 1000,
+        "stock": 50,
+        "img": "Reparacion9.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Teclado USB",
+        "precio": 4000,
+        "stock": 50,
+        "img": "Reparacion10.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Control de temperatura",
+        "precio": 20000,
+        "stock": 10,
+        "img": "Reparacion11.png"
+    },
+    {
+        "id": 12,
+        "nombre": "RTX 4090 TUF",
+        "precio": 253261,
+        "stock": 3,
+        "img": "Video1.png"
+    },
+    {
+        "id": 13,
+        "nombre": "RTX 3070 Ti",
+        "precio": 379999,
+        "stock":2,
+        "img": "Video2.png"
+    },
+    {
+        "id": 14,
+        "nombre": "RTX 2060",
+        "precio": 135999,
+        "stock": 5,
+        "img": "Video3.png"
+    },
+    {
+        "id": 15,
+        "nombre": "RTX 3060 GAMING X",
+        "precio": 78151,
+        "stock": 0,
+        "img": "Video4.png"
+    },
+    {
+         "id": 16,
+         "nombre": "RTX 3090 Ventus",
+         "precio": 989999,
+         "stock": 1,
+         "img": "Video5.png"
+        },
+    {
+        "id": 17,
+        "nombre": "RTX 3060 Ph-rtx3060",
+        "precio": 259799,
+        "stock": 2,
+        "img": "Video6.png"
+    }
+]

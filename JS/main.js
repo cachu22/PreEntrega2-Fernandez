@@ -6,10 +6,10 @@
         { id: 4, nombre: "Limpieza", precio: 5000, stock: 50 },
         { id: 5, nombre: "Programación", precio: 10000, stock: 50 },
         { id: 6, nombre: "Recuperación de datos", precio: 15000, stock: 50 },
-        { id: 7, nombre: "Disco Rígido", precio: 5000, stock: 100, stock: 50 },
-        { id: 8, nombre: "Disco SSD", precio: 10000, stock: 25, stock: 50 },
-        { id: 9, nombre: "Auriculares", precio: 1000, stock: 20, stock: 50 },
-        { id: 10, nombre: "Teclado USB", precio: 4000, stock: 20, stock: 50 },
+        { id: 7, nombre: "Disco Rígido", precio: 5000, stock: 50 },
+        { id: 8, nombre: "Disco SSD", precio: 10000, stock: 50 },
+        { id: 9, nombre: "Auriculares", precio: 1000, stock: 50 },
+        { id: 10, nombre: "Teclado USB", precio: 4000, stock: 50 },
         ]
     
     //modificar array
@@ -20,12 +20,12 @@
     
     //Array de productos
     const video = [
-        { id: 1, nombre: "RTX 4090 TUF", precio: 253261, stock: 3 },
-        { id: 2, nombre: "RTX 3070 Ti", precio: 379999, stock:2  },
-        { id: 3, nombre: "RTX 2060", precio: 135999, stock: 5 },
-        { id: 4, nombre: "RTX 3060 GAMING X", precio: 78151, stock: 0 },
-        { id: 5, nombre: "RTX 3090 Ventus", precio: 989999, stock: 1 },
-        { id: 6, nombre: "RTX 3060 Ph-rtx3060", precio: 259799, stock: 2 },
+        { id: 12, nombre: "RTX 4090 TUF", precio: 253261, stock: 3 },
+        { id: 13, nombre: "RTX 3070 Ti", precio: 379999, stock:2  },
+        { id: 14, nombre: "RTX 2060", precio: 135999, stock: 5 },
+        { id: 15, nombre: "RTX 3060 GAMING X", precio: 78151, stock: 0 },
+        { id: 16, nombre: "RTX 3090 Ventus", precio: 989999, stock: 1 },
+        { id: 17, nombre: "RTX 3060 Ph-rtx3060", precio: 259799, stock: 2 },
     ]
     
     //Spread
@@ -86,7 +86,7 @@ function guardarLS (){
     })
 
 //Cards de productos
-const DiagnosticoBtn = document.querySelector("#diagnosticoBtn");
+/* const DiagnosticoBtn = document.querySelector("#DiagnosticoBtn");
 DiagnosticoBtn.addEventListener("click", function() {
   const producto = negocio.find((prod) => prod.id === 1);
 
@@ -111,6 +111,7 @@ DiagnosticoBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -150,6 +151,7 @@ ReparacionBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -189,6 +191,7 @@ ActualizacionBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -230,6 +233,7 @@ LimpiezaBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -269,6 +273,7 @@ ProgramacionBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -308,6 +313,7 @@ RecuperacionBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -347,6 +353,7 @@ RigidoBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -386,6 +393,7 @@ SSDBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -425,6 +433,7 @@ AuricularesBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -464,6 +473,7 @@ TecladoUSBBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -503,6 +513,7 @@ TemperaturaBtn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -519,7 +530,7 @@ TemperaturaBtn.addEventListener("click", function() {
 
 const Placa1Btn = document.querySelector("#Placa1Btn");
 Placa1Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 1);
+  const producto = video.find((prod) => prod.id === 12);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_4090_TUF por el valor de $253261 + IVA al carrito?',
@@ -542,6 +553,7 @@ Placa1Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -558,7 +570,7 @@ Placa1Btn.addEventListener("click", function() {
 
 const Placa2Btn = document.querySelector("#Placa2Btn");
 Placa2Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 2);
+  const producto = video.find((prod) => prod.id === 13);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_3070_Ti por el valor de $379999 + IVA al carrito?',
@@ -581,6 +593,7 @@ Placa2Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -597,7 +610,7 @@ Placa2Btn.addEventListener("click", function() {
 
 const Placa3Btn = document.querySelector("#Placa3Btn");
 Placa3Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 3);
+  const producto = video.find((prod) => prod.id === 14);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_2060 por el valor de $135999 + IVA al carrito?',
@@ -620,6 +633,7 @@ Placa3Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -636,7 +650,7 @@ Placa3Btn.addEventListener("click", function() {
 
 const Placa4Btn = document.querySelector("#Placa4Btn");
 Placa4Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 4);
+  const producto = video.find((prod) => prod.id === 15);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_3060_GAMING_X por el valor de $78151 + IVA al carrito?',
@@ -659,6 +673,7 @@ Placa4Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -675,7 +690,7 @@ Placa4Btn.addEventListener("click", function() {
 
 const Placa5Btn = document.querySelector("#Placa5Btn");
 Placa5Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 5);
+  const producto = video.find((prod) => prod.id === 16);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_3090_Ventus por el valor de $989999 + IVA al carrito?',
@@ -698,6 +713,7 @@ Placa5Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -714,7 +730,7 @@ Placa5Btn.addEventListener("click", function() {
 
 const Placa6Btn = document.querySelector("#Placa6Btn");
 Placa6Btn.addEventListener("click", function() {
-  const producto = video.find((prod) => prod.id === 6);
+  const producto = video.find((prod) => prod.id === 17);
 
   Swal.fire({
     title: 'Seguro que desea agregar una placa de video RTX_3060_Ph_rtx3060 por el valor de $259799 + IVA al carrito?',
@@ -737,6 +753,7 @@ Placa6Btn.addEventListener("click", function() {
       } else {
         producto.stock -= cant;
         chango.push({
+          id: producto.id,
           nombre: producto.nombre,
           precio: ventaTotal,
           cantidad: cant
@@ -749,7 +766,7 @@ Placa6Btn.addEventListener("click", function() {
       }
     }
   })
-});
+}); */
 
 //Calculo de ventas
 class Ventas {
@@ -783,5 +800,80 @@ console.log(chango);
 console.log("El precio total es " + totales);
 
 
+//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega//Reentrega
+
+
 //Limpiar localstorage
 /* localStorage.clear() */
+
+//CODIGO DE YOUTUBER
+document.addEventListener('DOMContentLoaded', () => {
+  fetchData()
+})
+
+const fetchData = async () => {
+  try {
+      const res = await fetch("../data/api.json")
+      const data = await res.json()
+      console.log(data)
+  } catch (error) {
+      console.log(error)
+  }
+}
+//FIN CODIGO YOUTUBER
+
+const renderServicios = (arr) => {
+  let html;
+  for(const item of arr) {
+    const {id, nombre, img, precio } =item;
+
+    html = `
+    <div class="card">
+      <div class="card-image">
+      <img src="../img/${img}">
+      </div>
+      <div>
+      <span class= "card-title">${nombre.toUpperCase()}</span>
+    </div>
+      <div class="card-content">
+        <p>Precio $${precio} + IVA</p>
+      </div>
+    <div class"card-action">
+     <button class="btn" id="${id}">Comprar</button>
+    </div>
+  </div>
+  `;
+  
+  contenedor.innerHTML += html;
+  }}
+
+  //async away
+  async function fetchApi() {
+    const response = await fetch('../data/api.json');
+    const data=await response.json()
+    console.log(data);
+    renderServicios(data);
+  }
+
+  fetchApi()
+
+  console.log();
+/*   .then((response) => console.log(response)) */
+  
+    //Reentrega
+
+
+
+    const pintarCards = data => {
+      console.log(data)
+      data.forEach(producto => {
+        document.getElementById('DiagnosticoBtn').dataset.id = producto.id
+        const clone = templateCard.cloneNode(true)
+        DocumentFragment.appenChild(clone)
+      })
+      items.appenChild(fragment)
+  }
+  
+
+
+  

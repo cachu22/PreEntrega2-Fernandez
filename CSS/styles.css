@@ -17,6 +17,28 @@ ul {
 /*Banner-navegación-gral*/
 .navbar-expand-lg {
   background-image: url(../img/bannerbackground.jpg); }
+  
+/* CARRITO DE COMPRAS */
+.logo-carrito{
+  margin-left: 591px;
+  margin-right: 95px;
+  margin-top: 1px;
+  width: 45px;
+}
+
+h5{
+  margin-right: 2cm;
+  color: yellow;
+  width: 50px;
+}
+
+.precio-total{
+  margin-right: 2cm;
+  color: yellow;
+  width: 50px;
+}
+/* FIN CARRITO DE COMPRA */
+
 
 /*FUENTES*/
 /*Fuente__General y background*/
@@ -57,6 +79,7 @@ h4 {
 
 /*Login*/
 #Header-login {
+  margin-right: 20px;
   grid-area: header;
   display: flex;
   flex-direction: column;
@@ -75,11 +98,12 @@ h4 {
   color: blue;
 }
 
-
 /*Navegación-logo*/
 .logo {
   height: 8rem;
-  max-width: 100%; }
+  max-width: 100%;
+position:static;
+}
 
 /*navegación-formato*/
 #navegacion-web {
@@ -160,12 +184,14 @@ section div img {
  "footer footer footer";
     grid-template-columns: repeat(3, 1fr); }
   /*Contenedor-index-grilla*/
+
   .contenedor-index {
     display: flex;
     flex-direction: row;
     gap: 3rem;
     padding: 5rem;
     align-items: center; }
+    
   /*contenedor-index-imagenes*/
   .contenedor-index img {
     width: 250px;
