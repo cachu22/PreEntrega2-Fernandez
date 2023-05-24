@@ -269,7 +269,6 @@ const pintarFooter = () => {
     carrito = {}
     pintarCarrito()
   })
-
   const btnCompra = document.getElementById('finalizar-compra')
   btnCompra.addEventListener('click', () => {
     Swal.fire({
