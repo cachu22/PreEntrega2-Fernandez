@@ -1,0 +1,112 @@
+/*Página Galeria*/
+/*padre-imagenes*/
+#padre-imagenes {
+    @extend .alineaciontexto;
+    grid-area: productos;
+}
+
+/*Imagenes__Tamaño*/
+img {
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+/*caja_imagenes*/
+#id-imagenes {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(149, 162, 190, 0.829);
+    width: 12rem;
+    border: solid 1px;
+    justify-content: space-between;
+    row-gap: 20px;
+    padding: 1rem;
+    margin: auto;
+}
+
+/*imagenes-bordes*/
+.galeria__imagenes  {
+    border: solid 1px;
+}
+
+/*Mobile First*/
+/*Grilla*/
+#grilla-gral    {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "productos"
+        "banner"
+        "footer";
+    grid-template-rows: 1frpx 1fr 1fr 50px;
+    row-gap: 10px;
+    height: 100vh;
+    margin: auto;
+}
+
+/*Media Querie 320px*/
+@media screen and (min-width: $pantalla-pequeña) {
+    #grilla-gral {
+        grid-template-areas: 
+            "header header"
+            "productos productos"
+            "banner banner"
+            "footer footer";
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*Media Querie 768px*/
+@media screen and (min-width: $pantalla-mediana) {
+    #grilla-gral {
+        grid-template-rows: 200px 1fr 1fr 50px;
+        grid-template-areas: 
+            "header header header"
+            "productos productos productos"
+            "banner banner banner"
+            "footer footer footer";
+        grid-template-columns: repeat(3, 1fr);
+    }  
+
+    /*Página Galeria*/
+    #padre-imagenes {
+        grid-area: productos;
+        text-align: center;
+    }
+
+    /*Caja-Imagenes*/
+    #id-imagenes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 40rem;
+        align-items: center;
+        justify-items: center;
+        column-gap: 20px;
+    }
+
+    /*Animacion-Imagenes*/
+    .galeria__imagenes:hover    {
+        transform: scale(2);
+        transition: transform .5s;
+    }
+}
+
+/*Media Querie 900px*/
+@media screen and (min-width: $pantalla-grande) {
+    /*Grilla Gral*/
+    #grilla-gral {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Grilla-Navegacion*/
+    #navegacion-web {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    /*Pagina Galeria*/
+    #id-imagenes {
+        @include sizes(45rem, 40rem);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

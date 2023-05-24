@@ -1,0 +1,124 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Decoración-navegación-gral*/
+a   {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+/*Estilo-navegación-gral*/
+ul  {
+    @extend .alineaciontexto;
+    list-style: none;
+}
+
+/*Banner-navegación-gral*/
+.navbar-expand-lg {
+    background-image: url(../img/bannerbackground.jpg);
+}
+
+/*FUENTES*/
+/*Fuente__General y background*/
+body    {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../img/background-gral.jpg);
+}
+
+/*Fuente__H1*/
+h1  {
+    margin-bottom: 1rem;
+    font-size: 3pc;
+    color: white; text-shadow: black 0.1rem 0.1rem 0.2rem
+}
+
+/*Fuente__H2*/
+h2  {
+    @extend .extend-h2-h3;
+    margin-top: 4rem;
+}
+
+/*Fuente__H3*/
+h3 {
+    @extend .extend-h2-h3;
+    @extend .alineaciontexto;
+}
+
+/*Fuente__H4*/
+h4 {
+    @extend .alineaciontexto;
+    font-size: 30px;
+    color: white; text-shadow: black 0.1rem 0.1rem 0.2rem
+}
+
+/*Margenes*/
+.margenes {
+    margin-bottom: 50px;
+}
+
+/*Header*/
+/*Navegación Gral*/
+#header-navegacion {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+}
+
+/*Navegación-logo*/
+.logo   {
+    height: 8rem;
+    max-width: 100%;
+}
+
+/*navegación-formato*/
+#navegacion-web {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Navegacion-color-letras*/
+#navegacion-web li a {
+    color:white;
+}
+
+/*navegación-animación*/
+#navegacion-web li:hover    {
+    font-size: 30px;
+    transition: font-size 0.2s;
+}
+
+/*navegación-elementos*/
+#navegacion-web li  {
+    @extend .alineaciontexto;
+    background-color: rgba(239, 247, 244, 0);
+    padding: .2rem 1rem;
+}
+
+/*Seccion-footer*/
+#footer {
+    @extend .alineaciontexto;
+    grid-area: footer;
+    margin-top: 100px;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
+
+/*Extends*/
+.alineaciontexto    {
+    text-align: center;
+}
+
+.extend-h2-h3   {
+    font-size: 35px;
+    color: white; text-shadow: black 0.1rem 0.1rem 0.2rem
+}
+
+/*Mixin*/
+@mixin sizes($ancho, $alto) {
+    width: $ancho;
+    height: $alto;
+}

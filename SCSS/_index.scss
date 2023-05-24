@@ -1,0 +1,81 @@
+/*Página Index*/
+/*Grilla Pagina-Index*/
+#grilla-index   {
+    @extend .alineaciontexto;
+}
+
+section div img    {
+    width: 200px;
+}
+
+/*Mobile First*/
+/*Grilla*/
+#grilla-gral    {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "productos"
+        "banner"
+        "footer";
+    grid-template-rows: 1frpx 1fr 1fr 50px;
+    row-gap: 10px;
+    height: 100vh;
+    margin: auto;
+}
+
+/*Media Querie 320px*/
+@media screen and (min-width: $pantalla-pequeña) {
+    #grilla-gral {
+        grid-template-areas: 
+            "header header"
+            "productos productos"
+            "banner banner"
+            "footer footer";
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*Media Querie 768px*/
+@media screen and (min-width: $pantalla-mediana) {
+    #grilla-gral {
+        grid-template-rows: 200px 1fr 1fr 50px;
+        grid-template-areas: 
+            "header header header"
+            "productos productos productos"
+            "banner banner banner"
+            "footer footer footer";
+        grid-template-columns: repeat(3, 1fr);
+    }  
+
+    /*Contenedor-index-grilla*/
+    .contenedor-index   {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        padding: 5rem;
+        align-items: center;
+    }
+    /*contenedor-index-imagenes*/
+    .contenedor-index img {
+        @include sizes (250px, 134.5px);
+    }
+}
+
+/*Media Querie 900px*/
+@media screen and (min-width: $pantalla-grande) {
+    /*Grilla Gral*/
+    #grilla-gral {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /*Grilla-Navegacion*/
+    #navegacion-web {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .contenedor-index img {
+        height: 269px;
+        width: 500px;
+    }
+}
